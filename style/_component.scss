@@ -1,0 +1,27 @@
+@use "./variable" as *;
+
+@mixin gradient_button($p_size, $w_size) {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  background-image: $grandient;
+  padding: $p_size;
+  width: $w_size;
+  transition: background-image 1s ease;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 25px;
+  &:hover {
+    background-image: $grandient_hover;
+  }
+  cursor: pointer;
+}
+
+@mixin grid_system($gap_s, $columns, $size) {
+  display: grid;
+  grid-template-columns: repeat($columns, #{$size});
+  gap: $gap_s;
+}
